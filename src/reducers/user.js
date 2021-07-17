@@ -5,8 +5,8 @@ const initUserState = {
 const userReducer = (state = initUserState, action) => {
     switch(action.type){
         case 'SET_USER':
-            const {user} = action;
-            return {...state, user}
+            const {payload} = action;
+            return {...state, user: payload}
         default:
             return state;
     }

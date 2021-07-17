@@ -8,9 +8,10 @@ export const getUser = (user_id) => {
     }
 }
 
-export const setUser = () => {
+export const setUser = (parameter) => {
     return {
         type: 'SET_USER',
+        payload: parameter
     }
 }
 

@@ -3,7 +3,7 @@ import counter from './counter';
 import {combineReducers} from 'redux';
 
 const allReudcer = combineReducers({
-    user, 
+    userTest: user, 
     counter
 });
 

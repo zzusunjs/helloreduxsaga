@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import { getUser } from './actions';
+import { getUser, increasement, descreasement } from './actions';
 
 
 
@@ -11,14 +11,20 @@ function App() {
     dispatch(getUser());
   }, [dispatch]);
 
-  const user = useSelector(state =>  state.user);
+  const user = useSelector(state =>  state.userTest.user);
   // user reducer's user object
   console.log(user);
-  // const counter = useSelector(state => state.counter.counter);
+  const counter = useSelector(state => state.counter);
+  console.log(counter);
 
   return (
     <div className="App">
-      hello redux saga
+      {user && <h6> hello {user.name} </h6>}
+      <br/>
+      count: {counter}
+      <br/>
+      <button onClick={()=>{dispatch(increasement(5))}}>INCREASEMENT</button>
+      <button onClick={()=>{dispatch(descreasement())}}>DESCREASEMENT</button>
     </div>
   );
 }

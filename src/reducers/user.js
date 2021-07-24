@@ -1,12 +1,10 @@
-const initUserState = {
-    user: null
-}
 
-const userReducer = (state = initUserState, action) => {
+const userReducer = (state = '', action) => {
     switch(action.type){
         case 'SET_USER':
-            const {payload} = action;
-            return {...state, user: payload}
+            const {name} = action;
+            console.log('set_user', name);
+            return name;
         default:
             return state;
     }

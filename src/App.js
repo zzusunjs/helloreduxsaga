@@ -11,7 +11,7 @@ function App() {
     dispatch(getUser());
   }, [dispatch]);
 
-  const user = useSelector(state =>  state.userTest.user);
+  const user = useSelector(state =>  state.userTest);
   // user reducer's user object
   console.log(user);
   const counter = useSelector(state => state.counter);
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      {user && <h6> hello {user.name} </h6>}
+      {user && <h6> hello {user} </h6>}
       <br/>
       count: {counter}
       <br/>

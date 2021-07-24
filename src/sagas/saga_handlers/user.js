@@ -11,8 +11,8 @@ export default function* handleGetUser() {
         const response = yield call(requestGetUser);
         // yeild call means: do nothing until we get the response 
         const { data } = response;
-        console.log(data);
-        yield put(setUser(data));
+        const { name } = data;
+        yield put(setUser(name));
 
     } catch (error) {
         console.log(error);
